@@ -1,7 +1,7 @@
 "use strict";
  
 import React, {StyleSheet, View, TouchableHighlight, Component, Text, TextInput} from 'react-native';
-import SecureView from "./SecureView";
+import PantryView from "./PantryView";
 import 'react-native-cookies';
 
 class LoginView extends Component {
@@ -54,10 +54,10 @@ class LoginView extends Component {
       })
     }).then((res) => res.json())
       .then((response) => {
-        console.log(response);
+        
         this.props.navigator.push({
-          title: "Home Page",
-          component: SecureView,
+          title: "Pantry List",
+          component: PantryView,
           passProps: {username: response.user.username, token: response.user.access_token},
         });
       })
