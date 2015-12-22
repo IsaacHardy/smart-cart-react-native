@@ -24,9 +24,7 @@ var PantryView = React.createClass({
                 data[section] = [];
               }
               data[section].push(item);
-            });
-            console.log(data, sections);
-          
+            });          
 
             this.setState({
               dataSource : this.state.dataSource.cloneWithRowsAndSections(data, sections),
@@ -91,7 +89,8 @@ var PantryView = React.createClass({
         <TouchableHighlight>
           <View style={styles.container}>
             <View style={styles.rightContainer}>
-              <Text style={styles.pantryItem}>Name: {rowData.title}</Text>
+              <Text style={styles.pantryItem}>{rowData.title}</Text>
+              <Text style={styles.pantryItem}>{rowData.quantity} of {rowData.preferred}</Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -105,7 +104,6 @@ var PantryView = React.createClass({
 var styles = StyleSheet.create({
     container: {
       padding: 10,
-      // marginTop: 10,
       flex: 1,
       flexDirection: 'row',
       alignItems: "center",
@@ -113,9 +111,8 @@ var styles = StyleSheet.create({
     },
     heading: {
       marginBottom: 20,
-      fontSize: 18,
-      textAlign: "center",
-      color: "#656565"
+      color: "#656565",
+      
     },
     subheading: {
       color: "#cccccc"
@@ -126,8 +123,18 @@ var styles = StyleSheet.create({
       backgroundColor: '#F5FCFF',
     },
     pantryItem: {
-      textAlign: "center",
+      // textAlign: "center",
     },
+    sectionHeader: {
+      padding: 15,
+      alignItems: "center",
+      backgroundColor: "blue",
+    },
+    sectionHeaderText: {
+      color: "#fff",
+      fontWeight: "800",
+      fontSize: 20,
+    }
 });
  
 module.exports = PantryView;

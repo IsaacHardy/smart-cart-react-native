@@ -20,7 +20,7 @@ var SmartCartAPP = React.createClass({
 
 var styles = StyleSheet.create({
     navigationContainer: {
-        flex: 1
+        flex: 1,
     }
 });
 

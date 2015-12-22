@@ -69,11 +69,7 @@ class LoginView extends Component {
 
   removeCookies(event) {
   
-    let ajaxNull = $.ajaxSetup({
-      headers: {
-        auth_token: null
-      }
-    });
+  
   }
  
 };
